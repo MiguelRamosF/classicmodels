@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import {MainLayoutComponent} from './mainLayout/mainLayoutComponent'
+import {HomeComponent} from "./home/homeComponent";
+import {UtilstandardComponent} from './utilstandard/utilstandardComponent'
+import {UtilanalysteComponent} from './utilanalyste/utilanalysteComponent'
 
 class App extends Component {
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+                <div className={"outer-container"} style={{height: '100%'}}>
+                    <MainLayoutComponent />
+                    <main id="page-wrap">
+                        <Route exact path="/" component={HomeComponent}/>
+                        <Route path="/utilstandard" component={UtilstandardComponent}/>
+                        <Route path="/utilanalyste" component={UtilanalysteComponent}/>
+                    </main>
+                </div>
+            </Router>
     );
   }
 }

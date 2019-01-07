@@ -1,0 +1,109 @@
+/* input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+
+.css_wrapper .react-grid-HeaderCell{
+    background-color: blue;
+} */
+
+h2 {
+    color: #397fbd;
+    font-size: 1.30em;
+}
+
+.css_wrapper_analyst{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-top: 100px;
+    background: #353c52c7;
+    box-shadow: 3px 3px 3px 4px #1d1c1c;
+}
+
+.css_map1{
+    float: left;
+    width: 49%;
+
+}
+.css_map2{
+    float: left;
+    width: 49%;
+    margin-left: 30px;
+}
+
+.wsdm-tooltip {
+    display: none;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 3px;
+    pointer-events: none;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  .wsdm-tooltip:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 50%;
+    margin-left: -0.5rem;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.5rem solid rgba(255, 255, 255, 0.95);
+  }
+
+
+  .react-select-container {
+    width: 140px !important ;
+    
+  }
+  .react-select__control{
+    background-color: hsl(227, 12%, 15%) !important;
+  }
+  .react-select__single-value{
+      color: white !important;
+  }
+  .react-select__menu{
+    background-color: hsl(227, 12%, 15%) !important;
+    color: white !important;
+  }
+
+  .react-select__option--is-focused {
+    background-color:#2684FF !important;
+  }
+  .react-select__option--is-selected {
+    background-color:#2684FF !important;
+  }
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0, 2%, 25%);; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:hsl(0, 2%, 25%);; 
+  }
