@@ -6,7 +6,7 @@ const path = require('path');
 
 // set up express app
 const app = express();
-app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 // connect to mongodb
 mongoose.connect('mongodb://localhost/classicmodels');
