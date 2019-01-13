@@ -19,7 +19,7 @@ body {
     margin: 0px; /* TODO: user agent style problem if not set to 0 */
 }
 
-#root {
+#app {
     height: 100%;
 }
 

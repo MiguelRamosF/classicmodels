@@ -1,36 +1,19 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-var cors = require('cors')
+const nodemon = require('nodemon');
 const path = require('path');
 
-// set up express app
-const app = express();
-app.use(express.static(path.join(__dirname, 'build')))
-
-// connect to mongodb
-mongoose.connect('mongodb://localhost/classicmodels');
-mongoose.Promise = global.Promise;
-
-//set up static files
-// app.use(express.static('public'));
-
-// Enable cross origin requests
-app.use(cors())
-
-// use body-parser middleware
-app.use(bodyParser.json());
-
-// initialize routes
-app.use('/api', require('./routes/api'));
-
-// error handling middleware
-app.use(function(err, req, res, next){
-    console.log(err); // to see properties of message in our console
-    res.status(422).send({error: err.message});
-});
-
-// listen for requests
-app.listen(process.env.port || 4000, function(){
-    console.log('now listening for requests on port 4000');
+nodemon({
+  execMap: {
+    js: 'node'
+  },
+  script: path.join(__dirname, 'server/server'),
+  ignore: [],
+  watch: process.env.NODE_ENV !== 'production' ? ['server/*'] : false,
+  ext: 'js'
+})
+.on('restart', function() {
+  console.log('Server restarted!');
+})
+.once('exit', function () {
+  console.log('Shutting down server');
+  process.exit();
 });

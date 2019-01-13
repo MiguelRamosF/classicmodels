@@ -287,7 +287,7 @@ export class UtilanalysteComponent extends React.Component {
 
     var dataMonthProfit = []
 
-    fetch("http://localhost:4000/api/paymentsCountryMonths2014")
+    fetch("/api/paymentsCountryMonths2014")
       .then(response => response.json())
       .then(parsedJSON => {
         //console.log(parsedJSON)
@@ -330,7 +330,7 @@ export class UtilanalysteComponent extends React.Component {
 
     var paymentsAvgCustomersMonths2014 = []
 
-    fetch("http://localhost:4000/api/paymentsAvgCustomersMonths2014")
+    fetch("/api/paymentsAvgCustomersMonths2014")
       .then(response => response.json())
       .then(parsedJSON => {
         //console.log(parsedJSON)

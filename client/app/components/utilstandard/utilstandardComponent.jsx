@@ -31,7 +31,7 @@ export class UtilstandardComponent extends React.Component {
   }
 
   fetchAll() {
-    fetch("http://localhost:4000/api/all")
+    fetch("/api/all")
       .then(response => response.json())
       .then(parsedJSON => {
         this.setState({
@@ -43,7 +43,7 @@ export class UtilstandardComponent extends React.Component {
   }
 
   fetchtop10orderedProducts() {
-    fetch("http://localhost:4000/api/top10orderedProducts")
+    fetch("/api/top10orderedProducts")
       .then(response => response.json())
       .then(parsedJSON => {
         console.log(parsedJSON)
@@ -65,7 +65,7 @@ export class UtilstandardComponent extends React.Component {
   }
 
   fetchtop5customers() {
-    fetch("http://localhost:4000/api/top5customers")
+    fetch("/api/top5customers")
       .then(response => response.json())
       .then(parsedJSON => {
         console.log(parsedJSON)
@@ -87,7 +87,7 @@ export class UtilstandardComponent extends React.Component {
   }
 
   fetchpaymentsMonth2014() {
-    fetch("http://localhost:4000/api/paymentsMonth2014")
+    fetch("/api/paymentsMonth2014")
       .then(response => response.json())
       .then(parsedJSON => {
         console.log(parsedJSON)
