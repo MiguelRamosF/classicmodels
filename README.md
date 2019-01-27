@@ -21,7 +21,7 @@ The project was deployed to an AWS instance so you can preview the project here 
 
 ### Prerequisites
 
-1 - NodeJS and Mongo DB must be installed
+1 - NodeJS v8.11.3 with NPM v5.6.0 and Mongo DB must be installed
 
 2 - Import customers.json, customersoffciespayments.json,  customerspayments.json, orders.json, payments.json in your mongoDB with the following commands:
 
