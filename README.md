@@ -1,44 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ClassicModels
 
-## Available Scripts
+Our project consisted in creating an application, on the language of our choice, on a NoSQL database studied during the courses, namely MongoDB.
 
-In the project directory, you can run:
+First, a denormalization step of the SQL data was performed. Indeed, we started from a relational database that represents the data of a miniaturized car shop, and that we transformed into JSON and then integrate it unnormally into MongoDB under different collections.
 
-### `npm start`
+So we created a web application coded in full JS with the MERN stack (Mongoose, Express, ReactJS, NodeJS). This application serves as a data visualization interface for the queries that will be described later in the report.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The application includes 3 views:
 
-### `npm test`
+- A standard user view: these are 4 most requested queries on the database without user intervention.
+- An Analyst / Decision-maker view: these are 2 complex queries that can be set by the user.
+- An Administrator view: It provides statistics on the data.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Preview 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project was deployed to an AWS instance so you can preview the project here : http://35.180.61.119/
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+1 - NodeJS and Mongo DB must be installed
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2 - Import customers.json, customersoffciespayments.json,  customerspayments.json, orders.json, payments.json in your mongoDB with the following commands:
+    mongoimport --db ZIPS --collection customers --file projectpath/json_data/customers.json
+    mongoimport --db ZIPS --collection customersoffciespayments --file projectpath/json_data/customersoffciespayments.json
+    mongoimport --db ZIPS --collection customerspayments --file projectpath/json_data/customerspayments.json
+    mongoimport --db ZIPS --collection orders --file projectpath/json_data/orders.json
+    mongoimport --db ZIPS --collection payments --file projectpath/json_data/payments.json
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3 - Mongod must be launched (connection open)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installing
 
-## Learn More
+1 - Open a command prompt in the folder project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2 - Run the following commands :
+```
+npm install
+node server.js
+```
+3 - Open your browser and go to : 
+```
+localhost:8080
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Built With
+
+* [ReactJS](https://reactjs.org/) - Front-end : ReactJS
+* [NodeJS](https://nodejs.org/) - Back-end : NodeJS
+* [MongoDB](https://www.mongodb.com) Database : Mongo DB, GUI : Studio 3T
+* [ReactTable](https://react-table.js.org)
+* [ReactChartJS](https://www.npmjs.com/package/react-chartjs-2)
+* [ReactSimpleMaps](https://www.react-simple-maps.io/)
+
+
+
+## Screenshots
+
+![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture01.JPG)
+![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture02.JPG)
+![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture03.JPG)
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
