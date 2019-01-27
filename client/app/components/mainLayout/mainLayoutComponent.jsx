@@ -10,7 +10,7 @@ export class MainLayoutComponent extends React.Component {
                 <Link to="/">Home</Link>
                 <Link to="/utilstandard">Utilisateur standard</Link>
                 <Link to="/utilanalyste">Analyste/Décisionnaire</Link>
-                <Link to="/administrateur">Administrateur</Link>
+                <Link to="/admin">Administrateur</Link>
             </Menu>
         )
     }

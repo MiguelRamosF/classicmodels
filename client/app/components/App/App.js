@@ -5,6 +5,7 @@ import { MainLayoutComponent } from '../mainLayout/mainLayoutComponent'
 import { HomeComponent } from "../home/homeComponent";
 import { UtilstandardComponent } from '../utilstandard/utilstandardComponent'
 import { UtilanalysteComponent } from '../utilanalyste/utilanalysteComponent'
+import { AdminComponent } from '../admin/adminComponent'
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/" component={HomeComponent} />
             <Route path="/utilstandard" component={UtilstandardComponent} />
             <Route path="/utilanalyste" component={UtilanalysteComponent} />
+            <Route path="/admin" component={AdminComponent} />
           </main>
         </div>
       </Router>
