@@ -24,11 +24,14 @@ The project was deployed to an AWS instance so you can preview the project here 
 1 - NodeJS and Mongo DB must be installed
 
 2 - Import customers.json, customersoffciespayments.json,  customerspayments.json, orders.json, payments.json in your mongoDB with the following commands:
+
+    ```
     mongoimport --db ZIPS --collection customers --file projectpath/json_data/customers.json
     mongoimport --db ZIPS --collection customersoffciespayments --file projectpath/json_data/customersoffciespayments.json
     mongoimport --db ZIPS --collection customerspayments --file projectpath/json_data/customerspayments.json
     mongoimport --db ZIPS --collection orders --file projectpath/json_data/orders.json
     mongoimport --db ZIPS --collection payments --file projectpath/json_data/payments.json
+    ```
 
 3 - Mongod must be launched (connection open)
 
@@ -61,9 +64,9 @@ localhost:8080
 
 ## Screenshots
 
-![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture01.JPG)
-![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture02.JPG)
-![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture03.JPG)
+![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture01.PNG)
+![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture02.PNG)
+![screenshot1](https://raw.githubusercontent.com/MiguelRamosF/classicmodels/master/img/Capture03.PNG)
 
 
 ## License
