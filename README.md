@@ -25,16 +25,24 @@ The project was deployed to an AWS instance so you can preview the project here 
 
 2 - Import customers.json, customersoffciespayments.json,  customerspayments.json, orders.json, payments.json in your mongoDB with the following commands:
 
-    ```
-    mongoimport --db ZIPS --collection customers --file projectpath/json_data/customers.json
-    mongoimport --db ZIPS --collection customersoffciespayments --file projectpath/json_data/customersoffciespayments.json
-    mongoimport --db ZIPS --collection customerspayments --file projectpath/json_data/customerspayments.json
-    mongoimport --db ZIPS --collection orders --file projectpath/json_data/orders.json
-    mongoimport --db ZIPS --collection payments --file projectpath/json_data/payments.json
-    ```
+```
+mongoimport --db ZIPS --collection customers --file projectpath/json_data/customers.json
+mongoimport --db ZIPS --collection customersoffciespayments --file projectpath/json_data/customersoffciespayments.json
+mongoimport --db ZIPS --collection customerspayments --file projectpath/json_data/customerspayments.json
+mongoimport --db ZIPS --collection orders --file projectpath/json_data/orders.json
+mongoimport --db ZIPS --collection payments --file projectpath/json_data/payments.json
+```
 
 3 - Mongod must be launched (connection open)
 
+4 - Configure config/config.js  with the proper database connection URI, the default config is:
+
+```
+module.exports = {
+  db: 'mongodb://localhost/classicmodels',
+  db_dev: 'mongodb://localhost/classicmodels',
+};
+```
 
 ### Installing
 
