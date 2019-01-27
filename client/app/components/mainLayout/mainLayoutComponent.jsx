@@ -1,7 +1,7 @@
 import React from 'react'
-import {slide as Menu} from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu'
 import './css/mainLayout.css'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export class MainLayoutComponent extends React.Component {
     render() {

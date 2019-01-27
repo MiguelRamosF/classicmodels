@@ -24,14 +24,14 @@ export class UtilstandardComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchAll()
+    this.fetchCustomers()
     this.fetchtop10orderedProducts()
     this.fetchtop5customers()
-    this.fetchpaymentsMonth2014()
+    this.monthlyPayments2004()
   }
 
-  fetchAll() {
-    fetch("/api/all")
+  fetchCustomers() {
+    fetch("/api/customers")
       .then(response => response.json())
       .then(parsedJSON => {
         this.setState({
@@ -53,9 +53,6 @@ export class UtilstandardComponent extends React.Component {
           top10productNames.push(parsedJSON[i]._id.productName[0])
           top10productQuantities.push(parsedJSON[i].tot)
         }
-        console.log(top10productNames)
-        console.log(top10productQuantities)
-
         this.setState({
           top10productNames: top10productNames,
           top10productQuantities: top10productQuantities
@@ -69,14 +66,12 @@ export class UtilstandardComponent extends React.Component {
       .then(response => response.json())
       .then(parsedJSON => {
         console.log(parsedJSON)
-         var top5customersNames = []
+        var top5customersNames = []
         var top5customersPayments = []
         for (var i = 0; i < parsedJSON.length; i++) {
           top5customersNames.push(parsedJSON[i].customerName)
           top5customersPayments.push(parsedJSON[i].paymentTotal)
         }
-        console.log(top5customersNames)
-        console.log(top5customersPayments)
 
         this.setState({
           top5customersNames: top5customersNames,
@@ -86,16 +81,15 @@ export class UtilstandardComponent extends React.Component {
       .catch(error => console.log("parsing failed", error))
   }
 
-  fetchpaymentsMonth2014() {
-    fetch("/api/paymentsMonth2014")
+  monthlyPayments2004() {
+    fetch("/api/monthlyPayments2004")
       .then(response => response.json())
       .then(parsedJSON => {
         console.log(parsedJSON)
-         var paymentsMonth2014 = []
+        var paymentsMonth2014 = []
         for (var i = 0; i < parsedJSON.length; i++) {
           paymentsMonth2014.push(parsedJSON[i].paymentsMonthTotal)
         }
-        console.log(paymentsMonth2014)
 
         this.setState({
           paymentsMonth2014: paymentsMonth2014
@@ -104,48 +98,44 @@ export class UtilstandardComponent extends React.Component {
       .catch(error => console.log("parsing failed", error))
   }
 
-  
+
 
   render() {
     const data = {
-      //  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       labels: this.state.top10productNames,
       datasets: [
         {
-          label: 'Top 10 voitures les plus commandés',
+          label: 'Les 10 voitures les plus commandés',
           backgroundColor: 'rgb(87, 128, 216)',
           borderColor: 'rgb(20, 240, 255)',
           borderWidth: 1,
           hoverBackgroundColor: 'rgba(255,99,132,0.4)',
           hoverBorderColor: 'rgba(255,99,132,1)',
-          // data: [65, 59, 80, 75, 56, 60, 70]
           data: this.state.top10productQuantities
         }
       ]
     };
 
     const data2 = {
-      // labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       labels: this.state.top5customersNames,
       datasets: [
         {
-          label: 'Top 5 customers',
+          label: 'Les 5 clients les plus fidèles',
           backgroundColor: 'rgba(255,99,132,0.2)',
           borderColor: 'rgba(255,99,132,1)',
           borderWidth: 1,
           hoverBackgroundColor: 'rgba(255,99,132,0.4)',
           hoverBorderColor: 'rgba(255,99,132,1)',
-          // data: [65, 59, 80, 81, 56, 55, 40]
           data: this.state.top5customersPayments
         }
       ]
     };
 
     const data3 = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'],
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       datasets: [
         {
-          label: "Chiffres d'affaires par mois en 2014",
+          label: "Chiffres d'affaires par mois en 2004",
           fill: false,
           lineTension: 0.1,
           backgroundColor: 'rgba(75,192,192,0.4)',
@@ -169,50 +159,29 @@ export class UtilstandardComponent extends React.Component {
     };
 
     const columns = [
-      // {
-      //   Header: 'Id',
-      //   accessor: '_id' // String-based value accessors!
-      // }, 
       {
-        Header: 'CustomerNumber',
+        Header: 'CustomerId',
         accessor: 'customerNumber', // String-based value accessors!,
         Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
       }, {
-        Header: 'CustomerName',
+        Header: 'Name',
         accessor: 'customerName' // String-based value accessors!
-      },// {
-      //   Header: 'ContactLastName',
-      //   accessor: 'contactLastName' // String-based value accessors!
-      // }, {
-      //   Header: 'ContactFirstName',
-      //   accessor: 'contactFirstName' // String-based value accessors!
-      // }, {
-      //   Header: 'Phone',
-      //   accessor: 'phone' // String-based value accessors!
-      // }, {
-      //   Header: 'AddressLine1',
-      //   accessor: 'addressLine1' // String-based value accessors!
-      // }, {
-      //   Header: 'AddressLine2',
-      //   accessor: 'addressLine2' // String-based value accessors!
-      //}, 
+      },
       {
         Header: 'City',
         accessor: 'city' // String-based value accessors!
-      }, {
-        Header: 'State',
-        accessor: 'state' // String-based value accessors!
-      }, {
-        Header: 'PostalCode',
-        accessor: 'postalCode' // String-based value accessors!
-      }, {
+      }, 
+      // {
+      //   Header: 'State',
+      //   accessor: 'state' // String-based value accessors!
+      // }, {
+      //   Header: 'PostalCode',
+      //   accessor: 'postalCode' // String-based value accessors!
+      // }, 
+      {
         Header: 'Country',
         accessor: 'country' // String-based value accessors!
-      }//, {
-      // Header: 'SalesRepEmployeeNumber',
-      // accessor: 'salesRepEmployeeNumber', // String-based value accessors!
-      // Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-      //}
+      }
       , {
         Header: 'CreditLimit',
         accessor: 'creditLimit', // String-based value accessors!
@@ -252,7 +221,7 @@ export class UtilstandardComponent extends React.Component {
                   ticks: {
                     autoSkip: false,
                     fontSize: 2
-      
+
                   }
                 }]
               }

@@ -16,153 +16,160 @@ import tooltip from "wsdm-tooltip"
 
 import './css/utilanalysteComponent.css'
 
-var countriesGeoCoord = 
-[
-  {
+var countriesGeoCoord =
+  [
+    {
       "latlng": [
-          2, 
-          46
-      ], 
-      "name": "France", 
-  },
-  {
+        2,
+        46
+      ],
+      "name": "France",
+    },
+    {
       "latlng": [
-          133,
-          -27 
-          
-      ], 
-      "name": "Australia", 
-  },
-  {
-      "latlng": [
-          138, 
-          36
-      ], 
-      "name": "Japan", 
-  },
-  {
-      "latlng": [
-          -2, 
-          54
-      ], 
-      "name": "UK", 
-  },
-  {
-      "latlng": [
-          -100, 
-          40
-      ], 
-      "name": "USA", 
-  },
-  {
-    "latlng": [ 
-      13.33333333,
-      47.33333333
-  ], 
-  "name": "Austria",
-},
-{
-  "latlng": [
-    4,
-    50.83333333
-    
-], 
-"name": "Belgium", 
-},
-{
-  "latlng": [
-    -95,
-    60
-    
-], 
-"name": "Canada", 
-},
-{
-  "latlng": [
-    10,
-    56
-], 
-"name": "Denmark", 
-},
-{
-  "latlng": [
-    26,
-    64
-], 
-"name": "Finland", 
-},
-{
-  "latlng": [ 
-    9,
-    51
-], 
-"name": "Germany", 
-},
-{
-  "latlng": [ 
-    -8,
-    53
-], 
-"name": "Ireland", 
-},
-{
-  "latlng": [
-    12.83333333,
-    42.83333333
-], 
-"name": "Italy", 
-},
-{
-  "latlng": [ 
-    174,
-    -41
-], 
-"name": "New Zealand", 
-},
-{
-  "latlng": [ 
-    122,
-    13
-], 
-"name": "Philippines", 
-},
-{
-  "latlng": [
-    10,
-    62
-], 
-"name": "Norway",  
-},
-{
-  "latlng": [
-    103.8,
-    1.36666666
-], 
-"name": "Singapore", 
-},
-{
-  "latlng": [ 
-    -4,
-    40
-], 
-"name": "Spain", 
-},
-{
-  "latlng": [ 
-    15,
-    62
-], 
-"name": "Sweden",  
-},
-{
-  "latlng": [ 
-    8,
-    47
-], 
-"name": "Switzerland",  
-}
+        133,
+        -27
 
-]
+      ],
+      "name": "Australia",
+    },
+    {
+      "latlng": [
+        138,
+        36
+      ],
+      "name": "Japan",
+    },
+    {
+      "latlng": [
+        -2,
+        54
+      ],
+      "name": "UK",
+    },
+    {
+      "latlng": [
+        -100,
+        40
+      ],
+      "name": "USA",
+    },
+    {
+      "latlng": [
+        13.33333333,
+        47.33333333
+      ],
+      "name": "Austria",
+    },
+    {
+      "latlng": [
+        4,
+        50.83333333
+
+      ],
+      "name": "Belgium",
+    },
+    {
+      "latlng": [
+        -95,
+        60
+
+      ],
+      "name": "Canada",
+    },
+    {
+      "latlng": [
+        10,
+        56
+      ],
+      "name": "Denmark",
+    },
+    {
+      "latlng": [
+        26,
+        64
+      ],
+      "name": "Finland",
+    },
+    {
+      "latlng": [
+        9,
+        51
+      ],
+      "name": "Germany",
+    },
+    {
+      "latlng": [
+        -8,
+        53
+      ],
+      "name": "Ireland",
+    },
+    {
+      "latlng": [
+        12.83333333,
+        42.83333333
+      ],
+      "name": "Italy",
+    },
+    {
+      "latlng": [
+        174,
+        -41
+      ],
+      "name": "New Zealand",
+    },
+    {
+      "latlng": [
+        122,
+        13
+      ],
+      "name": "Philippines",
+    },
+    {
+      "latlng": [
+        10,
+        62
+      ],
+      "name": "Norway",
+    },
+    {
+      "latlng": [
+        103.8,
+        1.36666666
+      ],
+      "name": "Singapore",
+    },
+    {
+      "latlng": [
+        -4,
+        40
+      ],
+      "name": "Spain",
+    },
+    {
+      "latlng": [
+        15,
+        62
+      ],
+      "name": "Sweden",
+    },
+    {
+      "latlng": [
+        8,
+        47
+      ],
+      "name": "Switzerland",
+    },
+    {
+      "latlng": [
+        114,
+        22
+      ],
+      "name": "Hong Kong",
+    }
+
+  ]
 
 const options = [
   { value: 'january', label: 'January' },
@@ -179,16 +186,22 @@ const options = [
   { value: 'december', label: 'December' },
 ];
 
+const optionsYear = [
+  { value: '2003', label: '2003' },
+  { value: '2004', label: '2004' },
+  { value: '2005', label: '2005' },
+];
+
 const wrapperStyles = {
   width: "100%",
   maxWidth: 800,
   //margin: "0 auto",
 }
 
-function fetchGeoCoord(country){
-  if(country == "Norway  ") country = country.replace(/\s/g, '');
-  for ( var j=0; j<countriesGeoCoord.length; j++){
-    if(countriesGeoCoord[j].name == country){
+function fetchGeoCoord(country) {
+  if (country == "Norway  ") country = country.replace(/\s/g, '');
+  for (var j = 0; j < countriesGeoCoord.length; j++) {
+    if (countriesGeoCoord[j].name == country) {
       return countriesGeoCoord[j].latlng
     }
   }
@@ -210,44 +223,45 @@ export class UtilanalysteComponent extends React.Component {
       cities: [],
       dataMonthProfit: [],
       paymentsAvgCustomersMonths2014: [],
-      selectedOption1: {"value":"january", "label": "January"},
-      selectedOption2: {"value":"january", "label": "January"},
-      
+      selectedOption1: { "value": "january", "label": "January" },
+      selectedOption1Year: { "value": "2003", "label": "2003" },
+      selectedOption2: { "value": "january", "label": "January" },
+      selectedOption2Year: { "value": "2003", "label": "2003" },
+
     }
 
     this.fetchpaymentsCountryMonths2014 = this.fetchpaymentsCountryMonths2014.bind(this)
     this.handleMouseMove = this.handleMouseMove.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
-    // this.handleClick = this.handleClick.bind(this)
   }
   componentDidMount() {
-
-    // 
-    // ReactTooltip.rebuild()
     this.tip = tooltip()
     this.tip.create()
     this.fetchpaymentsCountryMonths2014()
     this.fetchpaymentsAvgCustomersMonths2014()
     this.fetchCities()
-    // ReactTooltip.rebuild()
     setTimeout(() => {
       ReactTooltip.rebuild()
-      
-
     }, 300)
-    // this.fetchpaymentsCountryMonths2014()
   }
 
-  componentDidUpdate (){
+
+  componentDidUpdate(prevProps, prevState) {
+
     setTimeout(() => {
       ReactTooltip.rebuild()
-      
-
     }, 300)
+
+    if (prevState.selectedOption1Year.value != this.state.selectedOption1Year.value) {
+      this.fetchpaymentsCountryMonths2014()
+    }
+    if (prevState.selectedOption2Year.value != this.state.selectedOption2Year.value) {
+      this.fetchpaymentsAvgCustomersMonths2014()
+    }
   }
 
   handleMouseMove(city, evt) {
-    
+
     this.tip.show(`
       <div class="tooltip-inner">
         ${city.population}
@@ -264,9 +278,22 @@ export class UtilanalysteComponent extends React.Component {
     console.log(`Option selected:`, selectedOption1);
   }
 
+  handleChange1Year = (selectedOption1Year) => {
+    this.setState({ selectedOption1Year });
+    console.log(`Option selected:`, selectedOption1Year);
+
+  }
+
+
   handleChange2 = (selectedOption2) => {
     this.setState({ selectedOption2 });
     console.log(`Option selected:`, selectedOption2);
+  }
+
+  handleChange2Year = (selectedOption2Year) => {
+    this.setState({ selectedOption2Year });
+    console.log(`Option selected:`, selectedOption2Year);
+    this.fetchpaymentsAvgCustomersMonths2014()
   }
 
   handleClick = (marker, evt) => {
@@ -286,297 +313,317 @@ export class UtilanalysteComponent extends React.Component {
   fetchpaymentsCountryMonths2014() {
 
     var dataMonthProfit = []
-
-    fetch("/api/paymentsCountryMonths2014")
+    var selected_year = this.state.selectedOption1Year.value
+    var endpoint = "/api/monthlyOfficesPaymentsYears?year=" + selected_year
+    console.log("1 endpo", endpoint)
+    fetch(endpoint)
       .then(response => response.json())
       .then(parsedJSON => {
         //console.log(parsedJSON)
-        
-        for (var i=0; i< parsedJSON.results.length; i++){
-          
-            var latlng = fetchGeoCoord(parsedJSON.results[i]._id.country)
-            console.log("final", latlng)
-            var donnee = {
-              "name": parsedJSON.results[i]._id.country,
-              "coordinates": latlng,
-              "month": parsedJSON.results[i]._id.month,
-              "population": parsedJSON.results[i].value
-            }
-            console.log("donnee",donnee)
-            if(parsedJSON.results[i]._id.month == "01"){ donnee.month = "January"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "02"){ donnee.month = "February"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "03"){ donnee.month = "March"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "04"){ donnee.month = "April"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "05"){ donnee.month = "May"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "06"){ donnee.month = "June"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "07"){ donnee.month = "July"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "08"){ donnee.month = "August"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "09"){ donnee.month = "September"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "10"){ donnee.month = "October"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "11"){ donnee.month = "November"; dataMonthProfit.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "12"){ donnee.month = "December"; dataMonthProfit.push(donnee)}
+
+        for (var i = 0; i < parsedJSON.results.length; i++) {
+
+          var latlng = fetchGeoCoord(parsedJSON.results[i]._id.country)
+          console.log("final", latlng)
+          var donnee = {
+            "name": parsedJSON.results[i]._id.country,
+            "coordinates": latlng,
+            "month": parsedJSON.results[i]._id.month,
+            "population": parsedJSON.results[i].value
+          }
+          console.log("donnee", donnee)
+          if (parsedJSON.results[i]._id.month == "01") { donnee.month = "January"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "02") { donnee.month = "February"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "03") { donnee.month = "March"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "04") { donnee.month = "April"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "05") { donnee.month = "May"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "06") { donnee.month = "June"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "07") { donnee.month = "July"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "08") { donnee.month = "August"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "09") { donnee.month = "September"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "10") { donnee.month = "October"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "11") { donnee.month = "November"; dataMonthProfit.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "12") { donnee.month = "December"; dataMonthProfit.push(donnee) }
         }
         this.setState({
           dataMonthProfit: dataMonthProfit
 
         })
-        console.log("state",this.state)
+        console.log("state", this.state)
       })
       .catch(error => console.log("parsing failed", error))
-      
+
   }
 
   fetchpaymentsAvgCustomersMonths2014() {
 
     var paymentsAvgCustomersMonths2014 = []
+    var selected_year = this.state.selectedOption2Year.value
+    var endpoint = "/api/avgMonthlyCustomersPaymentsYears?year=" + selected_year
 
-    fetch("/api/paymentsAvgCustomersMonths2014")
+    console.log("2", endpoint)
+
+    fetch(endpoint)
       .then(response => response.json())
       .then(parsedJSON => {
         //console.log(parsedJSON)
-        
-        for (var i=0; i< parsedJSON.results.length; i++){
-          
-            var latlng = fetchGeoCoord(parsedJSON.results[i]._id.country)
-            console.log("final", latlng)
-            var donnee = {
-              "name": parsedJSON.results[i]._id.country,
-              "coordinates": latlng,
-              "month": parsedJSON.results[i]._id.month,
-              "population": parsedJSON.results[i].value.avg
-            }
-            console.log("donnee",donnee)
-            if(parsedJSON.results[i]._id.month == "01"){ donnee.month = "January"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "02"){ donnee.month = "February"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "03"){ donnee.month = "March"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "04"){ donnee.month = "April"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "05"){ donnee.month = "May"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "06"){ donnee.month = "June"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "07"){ donnee.month = "July"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "08"){ donnee.month = "August"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "09"){ donnee.month = "September"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "10"){ donnee.month = "October"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "11"){ donnee.month = "November"; paymentsAvgCustomersMonths2014.push(donnee)}
-            if(parsedJSON.results[i]._id.month == "12"){ donnee.month = "December"; paymentsAvgCustomersMonths2014.push(donnee)}
+
+        for (var i = 0; i < parsedJSON.results.length; i++) {
+
+          var latlng = fetchGeoCoord(parsedJSON.results[i]._id.country)
+          console.log("final", latlng)
+          var donnee = {
+            "name": parsedJSON.results[i]._id.country,
+            "coordinates": latlng,
+            "month": parsedJSON.results[i]._id.month,
+            "population": parsedJSON.results[i].value.avg
+          }
+          console.log("donnee", donnee)
+          if (parsedJSON.results[i]._id.month == "01") { donnee.month = "January"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "02") { donnee.month = "February"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "03") { donnee.month = "March"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "04") { donnee.month = "April"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "05") { donnee.month = "May"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "06") { donnee.month = "June"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "07") { donnee.month = "July"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "08") { donnee.month = "August"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "09") { donnee.month = "September"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "10") { donnee.month = "October"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "11") { donnee.month = "November"; paymentsAvgCustomersMonths2014.push(donnee) }
+          if (parsedJSON.results[i]._id.month == "12") { donnee.month = "December"; paymentsAvgCustomersMonths2014.push(donnee) }
         }
         this.setState({
           paymentsAvgCustomersMonths2014: paymentsAvgCustomersMonths2014
 
         })
-        console.log("state",this.state)
+        console.log("state", this.state)
       })
       .catch(error => console.log("parsing failed", error))
-      
+
   }
 
-  
+
 
   render() {
     const { selectedOption1 } = this.state;
+    const { selectedOption1Year } = this.state;
     const { selectedOption2 } = this.state;
-
+    const { selectedOption2Year } = this.state;
 
     return (
       <div className="css_wrapper_analyst">
-      
-      <div className="css_map1">
-      <h2>Mensual profit in 2004 by offices</h2>
-      <div style={wrapperStyles}>
 
-        <Select
-        className='react-select-container'
-        classNamePrefix="react-select"
-        value={selectedOption1}
-        placeholder= {"January"}
-        onChange={this.handleChange1}
-        options={options}
-      />
+        <div className="css_map1">
+          <h2>Les profits mensuels par année et par pays des magasins</h2>
+          <div style={wrapperStyles}>
 
-        <ComposableMap
-          projectionConfig={{ scale: 205 }}
-          width={800}
-          height={551}
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        >
-          <ZoomableGroup center={[0, 20]} disablePanning>
-            <Geographies geography="/world-50m.json">
-              {(geographies, projection) =>
-                geographies.map((geography, i) =>
-                  geography.id !== "ATA" && (
-                    <Geography
-                      key={i}
-                      data-tip={geography.properties.name}
-                      geography={geography}
-                      projection={projection}
-                      // onMouseMove={this.handleMouseMove}
-                      // onMouseLeave={this.handleMouseLeave}
-                      style={{
-                        default: {
-                          fill: "rgb(146, 152, 156)",
-                          stroke: "rgb(97, 106, 123)",
-                          strokeWidth: 0.75,
-                          outline: "none",
-                        },
-                        hover: {
-                          fill: "#607D8B",
-                          stroke: "#607D8B",
-                          strokeWidth: 0.75,
-                          outline: "none",
-                        },
-                        pressed: {
-                          fill: "#FF5722",
-                          stroke: "#607D8B",
-                          strokeWidth: 0.75,
-                          outline: "none",
-                        },
-                      }}
-                    />
-                  ))}
-            </Geographies>
-            <Markers>
-              {
-                
-                this.state.dataMonthProfit.map((city, i)=>{
-                  
+            <Select
+              className='react-select-container'
+              classNamePrefix="react-select"
+              value={selectedOption1}
+              placeholder={"January"}
+              onChange={this.handleChange1}
+              options={options}
+            />
+            <Select
+              className='react-select-container'
+              classNamePrefix="react-select"
+              value={selectedOption1Year}
+              placeholder={"2003"}
+              onChange={this.handleChange1Year}
+              options={optionsYear}
+            />
 
-                  if( selectedOption1.label == city.month ) {
+            <ComposableMap
+              projectionConfig={{ scale: 205 }}
+              width={800}
+              height={551}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            >
+              <ZoomableGroup center={[0, 20]} disablePanning>
+                <Geographies geography="/world-50m.json">
+                  {(geographies, projection) =>
+                    geographies.map((geography, i) =>
+                      geography.id !== "ATA" && (
+                        <Geography
+                          key={i}
+                          data-tip={geography.properties.name}
+                          geography={geography}
+                          projection={projection}
+                          // onMouseMove={this.handleMouseMove}
+                          // onMouseLeave={this.handleMouseLeave}
+                          style={{
+                            default: {
+                              fill: "rgb(146, 152, 156)",
+                              stroke: "rgb(97, 106, 123)",
+                              strokeWidth: 0.75,
+                              outline: "none",
+                            },
+                            hover: {
+                              fill: "#607D8B",
+                              stroke: "#607D8B",
+                              strokeWidth: 0.75,
+                              outline: "none",
+                            },
+                            pressed: {
+                              fill: "#FF5722",
+                              stroke: "#607D8B",
+                              strokeWidth: 0.75,
+                              outline: "none",
+                            },
+                          }}
+                        />
+                      ))}
+                </Geographies>
+                <Markers>
+                  {
 
-                    var datatip = city.population + ' - ' + city.name
-                    return(
-                      <Marker key={i} marker={city} onClick={ this.handleClick } 
-                      // data-tip={"hello world"}
-                      // onMouseMove={this.handleMouseMove}
-                      // onMouseLeave={this.handleMouseLeave} 
-                      >
-                    <circle
-                    data-tip={datatip}
-                      cx={0}
-                      cy={0}
-                      r={cityScale(city.population)}
-                      fill="rgb(92, 136, 230)"
-                      stroke="#607D8B"
-                      strokeWidth="2"
-                    />
-                  </Marker>
-                  
-                  
-                    )
+                    this.state.dataMonthProfit.map((city, i) => {
+
+
+                      if (selectedOption1.label == city.month) {
+
+                        var datatip = city.population + ' - ' + city.name
+                        return (
+                          <Marker key={i} marker={city} onClick={this.handleClick}
+                          // data-tip={"hello world"}
+                          // onMouseMove={this.handleMouseMove}
+                          // onMouseLeave={this.handleMouseLeave} 
+                          >
+                            <circle
+                              data-tip={datatip}
+                              cx={0}
+                              cy={0}
+                              r={cityScale(city.population)}
+                              fill="rgb(92, 136, 230)"
+                              stroke="#607D8B"
+                              strokeWidth="2"
+                            />
+                          </Marker>
+
+
+                        )
+                      }
+
+                    })
                   }
-                  
-                })
-              }
-    
-            </Markers>
-            
-          </ZoomableGroup>
-        </ComposableMap>
-        <ReactTooltip />
-        </div>
+
+                </Markers>
+
+              </ZoomableGroup>
+            </ComposableMap>
+            <ReactTooltip />
+          </div>
         </div>
 
         <div className="css_map2">
-        <h2>Mean mensual expenses from customers in 2014 by countries</h2>
-        <div style={wrapperStyles}>
-        <Select
-        className='react-select-container'
-        classNamePrefix="react-select"
-        value={selectedOption2}
-        placeholder= {"January"}
-        onChange={this.handleChange2}
-        options={options}
-      />
-      
+          <h2>Les profits mensuels moyens par année et par pays des clients</h2>
+          <div style={wrapperStyles}>
+            <Select
+              className='react-select-container'
+              classNamePrefix="react-select"
+              value={selectedOption2}
+              placeholder={"January"}
+              onChange={this.handleChange2}
+              options={options}
+            />
+            <Select
+              className='react-select-container'
+              classNamePrefix="react-select"
+              value={selectedOption2Year}
+              placeholder={"2003"}
+              onChange={this.handleChange2Year}
+              options={optionsYear}
+            />
 
-<ComposableMap
-          projectionConfig={{ scale: 205 }}
-          width={800}
-          height={551}
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        >
-          <ZoomableGroup center={[0, 20]} disablePanning>
-            <Geographies geography="/world-50m.json">             
-              {(geographies, projection) =>
-                geographies.map((geography, i) =>
-                  geography.id !== "ATA" && (
-                    <Geography
-                      key={i}
-                      data-tip={geography.properties.name}
-                      geography={geography}
-                      projection={projection}
-                      // onMouseMove={this.handleMouseMove}
-                      // onMouseLeave={this.handleMouseLeave}
-                      style={{
-                        default: {
-                          fill: "rgb(146, 152, 156)",
-                          stroke: "rgb(97, 106, 123)",
-                          strokeWidth: 0.75,
-                          outline: "none",
-                        },
-                        hover: {
-                          fill: "#607D8B",
-                          stroke: "#607D8B",
-                          strokeWidth: 0.75,
-                          outline: "none",
-                        },
-                        pressed: {
-                          fill: "#FF5722",
-                          stroke: "#607D8B",
-                          strokeWidth: 0.75,
-                          outline: "none",
-                        },
-                      }}
-                    />
-                  ))}
-            </Geographies>
-            <Markers>
-              {
-                
-                this.state.paymentsAvgCustomersMonths2014.map((city, i)=>{
-                  
 
-                  if( selectedOption2.label == city.month ) {
+            <ComposableMap
+              projectionConfig={{ scale: 205 }}
+              width={800}
+              height={551}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            >
+              <ZoomableGroup center={[0, 20]} disablePanning>
+                <Geographies geography="/world-50m.json">
+                  {(geographies, projection) =>
+                    geographies.map((geography, i) =>
+                      geography.id !== "ATA" && (
+                        <Geography
+                          key={i}
+                          data-tip={geography.properties.name}
+                          geography={geography}
+                          projection={projection}
+                          // onMouseMove={this.handleMouseMove}
+                          // onMouseLeave={this.handleMouseLeave}
+                          style={{
+                            default: {
+                              fill: "rgb(146, 152, 156)",
+                              stroke: "rgb(97, 106, 123)",
+                              strokeWidth: 0.75,
+                              outline: "none",
+                            },
+                            hover: {
+                              fill: "#607D8B",
+                              stroke: "#607D8B",
+                              strokeWidth: 0.75,
+                              outline: "none",
+                            },
+                            pressed: {
+                              fill: "#FF5722",
+                              stroke: "#607D8B",
+                              strokeWidth: 0.75,
+                              outline: "none",
+                            },
+                          }}
+                        />
+                      ))}
+                </Geographies>
+                <Markers>
+                  {
 
-                    var datatip = city.population + ' - ' + city.name
-                    return(
-                      <Marker key={i} marker={city} onClick={ this.handleClick } 
-                      // data-tip={"hello world"}
-                      // onMouseMove={this.handleMouseMove}
-                      // onMouseLeave={this.handleMouseLeave} 
-                      >
-                    <circle
-                    data-tip={datatip}
-                      cx={0}
-                      cy={0}
-                      r={cityScale(city.population)}
-                      fill="rgb(92, 136, 230)"
-                      stroke="#607D8B"
-                      strokeWidth="2"
-                    />
-                  </Marker>
-                  
-                  
-                    )
+                    this.state.paymentsAvgCustomersMonths2014.map((city, i) => {
+
+
+                      if (selectedOption2.label == city.month) {
+
+                        var datatip = city.population + ' - ' + city.name
+                        return (
+                          <Marker key={i} marker={city} onClick={this.handleClick}
+                          // data-tip={"hello world"}
+                          // onMouseMove={this.handleMouseMove}
+                          // onMouseLeave={this.handleMouseLeave} 
+                          >
+                            <circle
+                              data-tip={datatip}
+                              cx={0}
+                              cy={0}
+                              r={cityScale(city.population)}
+                              fill="rgb(92, 136, 230)"
+                              stroke="#607D8B"
+                              strokeWidth="2"
+                            />
+                          </Marker>
+
+
+                        )
+                      }
+
+                    })
                   }
-                  
-                })
-              }
-    
-            </Markers>
-            
-          </ZoomableGroup>
-        </ComposableMap>
+                </Markers>
+              </ZoomableGroup>
+            </ComposableMap>
+          </div>
         </div>
-        </div>
-        
+
       </div>
     )
-
   }
 }
 

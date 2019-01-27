@@ -1,34 +1,12 @@
-/* input[type=text] {
-    width: 130px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('https://www.w3schools.com/howto/searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-    width: 50%;
-}
-
-.css_wrapper .react-grid-HeaderCell{
-    background-color: blue;
-} */
 .css_bar_horizontal{
-    width: 48%;
+    width: 47%;
     float: left;
     margin: 10px;
     height: 435px;
 }
 
 .css_animated_line{
-    width: 48%;
+    width: 47%;
     float: left;
     margin: 10px;
     height: 435px;
@@ -36,13 +14,13 @@ input[type=text]:focus {
 }
 
 .css_reacttable{
-    width: 48%;
+    width: 47%;
     float: left;
     margin: 10px;
 }
 
 .css_bar{
-    width: 48%;
+    width: 47%;
     height: 435px;
     float: left;  
     margin-top: 10px;
